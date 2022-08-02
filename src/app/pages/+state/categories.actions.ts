@@ -18,7 +18,7 @@ export const LoadCategories = createAction(
 
 export const LoadCategoriesSuccess = createAction(
   CategoriesActionsNames.LoadCategoriesSuccess,
-  props<{ category: RootObject[] }>()
+  props<{ categories: RootObject[] }>()
 );
 
 

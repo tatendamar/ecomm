@@ -15,13 +15,18 @@ public readonly loadCategories$ = createEffect(() =>
       ofType(fromCategoriesActions.LoadCategories),
       switchMap(() =>
         this.categoriesService.categories().pipe(
-          map(category => 
-            fromCategoriesActions.LoadCategoriesSuccess({ category })),
+          map(categories => 
+            fromCategoriesActions.LoadCategoriesSuccess({ categories })),
           catchError(error =>
             of(fromCategoriesActions.LoadCategoriesFailure({ error })))
         )
       )
     )
+  );
+
+  init$ = createEffect(
+    () => this.actions$.pipe(tap((action) => console.log(action))),
+    { dispatch: false }
   );
 
 

@@ -12,9 +12,9 @@ const categoriesReducer = createReducer(
     error: null,
   })),
 
-  on(CategoriesActions.LoadCategoriesSuccess,(state, {category}) => ({
+  on(CategoriesActions.LoadCategoriesSuccess,(state, {categories}) => ({
     ...state,
-    categories: category,
+    categories: categories,
     loaded: true,
     error: null,
   })),
@@ -25,6 +25,9 @@ const categoriesReducer = createReducer(
 )
 
 
-export function reducer(state: CategoriesState | undefined, action: Action) {
+export const selectFeature = (state: CategoriesState) => state.categories
+
+
+export function reducer(state: CategoriesState | undefined, action: Action): CategoriesState {
     return categoriesReducer(state, action);
   }

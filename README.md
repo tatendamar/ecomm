@@ -1,6 +1,16 @@
 # ecomm
 
+## Development server
 
+Run `npm install or yarn install` to install packages.
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Getting started
 
@@ -9,9 +19,6 @@ To make it easy for you to get started with GitLab, here's a list of recommended
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
 
-# run npm install or yarn install
-
-then ng serve
 
 ***
 

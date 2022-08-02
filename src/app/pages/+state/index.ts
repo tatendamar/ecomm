@@ -7,17 +7,13 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import * as fromProducts from './categories.reducer';
+import { CategoriesState } from './category.state';
 
-export const storiesStateFeatureKey = 'storiesState';
 
-// export interface State {
-//   category: fromProducts.CategoriesState
 
-// }
-
-// export const reducers: ActionReducerMap<State> = {
-//   category: fromProducts.categoriesReducer
+// export const reducers: ActionReducerMap<CategoriesState> = {
+//   categories: fromProducts.reducer
 // };
 
 
-// export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<CategoriesState>[] =  [];
