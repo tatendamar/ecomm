@@ -26,3 +26,9 @@ export const LoadCategoriesFailure = createAction(
   CategoriesActionsNames.loadCategoriesFailure,
   props<{ error: any }>()
 );
+
+
+/** 
+ * * PRODUCTS
+*/
+

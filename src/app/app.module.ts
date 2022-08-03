@@ -16,7 +16,12 @@ import { ProductsComponent } from './pages/home/products/products.component';
 import {NgxPaginationModule} from 'ngx-pagination'; 
 import { CategoryFacade } from './pages/+state/categories.facade';
 import { CATEGORIES_FEATURE_KEY } from './pages/+state/category.state';
+import * as Categoryreducer  from './pages/+state/categories.reducer';
+import { ProductsFacade } from './pages/+state/products/products.facade';
+import { ProductsEffects } from './pages/+state/products/products.effects';
+import { PRODUCTS_FEATURE_KEY } from './pages/+state/products/products.state';
 import { reducer } from './pages/+state/categories.reducer';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 export const metaReducers: MetaReducer<any>[] = !environment.production
@@ -34,14 +39,16 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
     NgxPaginationModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature(CATEGORIES_FEATURE_KEY, reducer),
-    EffectsModule.forRoot([CategoriesEffects]),
+    StoreModule.forFeature(CATEGORIES_FEATURE_KEY, Categoryreducer.reducer),
+    StoreModule.forFeature(PRODUCTS_FEATURE_KEY, reducer),
+    EffectsModule.forRoot([CategoriesEffects,ProductsEffects ]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
     
   ],
-  providers: [CategoryFacade],
+  providers: [CategoryFacade, ProductsFacade],
   bootstrap: [
     AppComponent
   ]

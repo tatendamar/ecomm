@@ -3,6 +3,20 @@
       <span class="navbar-brand mb-0 h1">Navbar</span>
     </div>
   </nav>
+  <form [formGroup]="selectOrder">
+  <div class="row  mt-4">
+  <div class="col-md-6">
+    <label for="order">Order ASC/DESC*</label>
+    <select id="order" class="form-select" formControlName="order" placeholder="Select
+    order"  [(ngModel)]="selectedLevel" (change)="getProducts()">
+
+  <option *ngFor="let c of sort" [ngValue]="c.name">
+    {{c.name}}
+  </option>
+</select>
+</div>
+</div>
+</form>
 
 
 <div class="card mt-5" style="max-width: 540px;" *ngFor="let item of products | paginate: { itemsPerPage: 6, currentPage: page, totalItems: totalItems }">

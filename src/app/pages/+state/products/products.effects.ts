@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { CategoriesService } from '../services/categories.service';
 import { mergeMap, map, catchError, tap, concatMap, switchMap } from 'rxjs/operators';
-import * as fromCategoriesActions from './categories.actions';
+import * as fromProductsActions from './products.actions';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import { CategoriesService } from '../../services/categories.service';
 
 
 @Injectable()
-export class CategoriesEffects {
+export class ProductsEffects {
 
-public readonly loadCategories$ = createEffect(() =>
+public readonly loadProducts$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromCategoriesActions.LoadCategories),
-      switchMap(() =>
-        this.categoriesService.categories().pipe(
-          map(categories => 
-            fromCategoriesActions.LoadCategoriesSuccess({ categories })),
+      ofType(fromProductsActions.LoadProducts),
+      switchMap((action) =>
+        this.categoriesService.products(action.name,action.page,action.sort).pipe(
+          map(products => 
+            fromProductsActions.LoadProductsSuccess({ products })),
           catchError(error =>
-            of(fromCategoriesActions.LoadCategoriesFailure({ error })))
+            of(fromProductsActions.LoadProductsFailure({ error })))
         )
       )
     )
@@ -29,6 +29,8 @@ public readonly loadCategories$ = createEffect(() =>
     () => this.actions$.pipe(tap((action) => console.log(action))),
     { dispatch: false }
   );
+
+
 
 
   constructor(

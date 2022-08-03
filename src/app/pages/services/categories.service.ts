@@ -32,19 +32,21 @@ export class CategoriesService {
     )
   }
 
-  image(id): Observable<any> {
-    let httpHeaders = new HttpHeaders()
-         .set('Accept', "image/webp,*/*")
-
-    return this.http.get(`${this.categoriesUrl}/file/${id}`,{ headers: httpHeaders, responseType: 'blob'}).pipe(
-      map(e => URL.createObjectURL(e))
-    )
-  }
+  // getImageData(): Observable<Image> {
+  //   return this.http.get(`${this.categoriesUrl}/file/{}`, { responseType: 'blob' })
+  //   .pipe(
+  //     retry(1),
+  //     catchError(this.errorHandl)
+  //   )}
 
 
-  products(name,page): Observable<any> {
-    return this.http.get(`${this.categoriesUrl}/products/${page}/10/ASC/20/${name}?keyword=`).pipe(
+  products(name,page, sort): Observable<any> {
+    return this.http.get(`${this.categoriesUrl}/products/${page}/10/${sort}/20/${name}?keyword=`).pipe(
       map(response => {
+        if (!response){
+          throw new Error("not found");
+        }
+        
         const data = Object.assign({}, response);
         return data
       }

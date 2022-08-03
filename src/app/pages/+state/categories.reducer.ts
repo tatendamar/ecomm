@@ -25,9 +25,6 @@ const categoriesReducer = createReducer(
 )
 
 
-export const selectFeature = (state: CategoriesState) => state.categories
-
-
-export function reducer(state: CategoriesState | undefined, action: Action): CategoriesState {
+export function reducer(state: CategoriesState | undefined, action: Action) {
     return categoriesReducer(state, action);
   }
