@@ -1,4 +1,4 @@
-import { Content, ProductRootObject } from '../../../shared/models/Products';
+import { Content, ProductRootObject } from '../../../shared/models/products';
 
 export const PRODUCTS_FEATURE_KEY = 'products';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '../services/categories.service';
 
-import { RootObject, Image } from '../../shared/models/Categories';
+import { RootObject, Image } from '../../shared/models/categories';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import * as fromActions from '../+state/categories.actions';

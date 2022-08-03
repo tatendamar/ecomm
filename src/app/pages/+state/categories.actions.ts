@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { RootObject, Image } from '../../shared/models/Categories';
+import { RootObject, Image } from '../../shared/models/categories';
 import { Update } from '@ngrx/entity';
 
 

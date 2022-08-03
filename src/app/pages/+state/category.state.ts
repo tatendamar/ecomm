@@ -1,5 +1,5 @@
-import { ProductRootObject } from "src/app/shared/models/Products";
-import { RootObject } from "../../shared/models/Categories";
+import { ProductRootObject } from "src/app/shared/models/products";
+import { RootObject } from "../../shared/models/categories";
 
 
 export const CATEGORIES_FEATURE_KEY = 'categories';

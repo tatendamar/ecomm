@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { RootObject, Image } from '../../shared/models/Categories';
-import { ProductRootObject} from '../../shared/models/Products';
+import { RootObject, Image } from '../../shared/models/categories';
+import { ProductRootObject} from '../../shared/models/products';
 
 @Injectable({
   providedIn: 'root'

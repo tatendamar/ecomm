@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { ProductsState } from './products.state';
-import { Content, ProductRootObject } from '../../../shared/models/Products';
+import { Content, ProductRootObject } from '../../../shared/models/products';
 
 
 @Injectable()

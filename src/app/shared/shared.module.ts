@@ -14,7 +14,7 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 
 
 @NgModule({
-  declarations: [ColumnComponent, HeaderComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule,
@@ -37,7 +37,7 @@ import { NgProgressModule } from '@ngx-progressbar/core';
     AuthService
   ],
   exports: [
-    ColumnComponent
+  
   ]
 })
 export class SharedModule { }

@@ -4,7 +4,7 @@ import * as categoryActions from './categories.actions';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
-import { RootObject } from 'src/app/shared/models/Categories';
+import { RootObject } from 'src/app/shared/models/categories';
 import { CategoriesState } from './category.state';
 
 

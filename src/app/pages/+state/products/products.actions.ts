@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Content, ProductRootObject } from '../../../shared/models/Products';
+import { Content, ProductRootObject } from '../../../shared/models/products';
 
 export enum ProductsActionsNames {
     Init = '[Products] Init',
